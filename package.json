@@ -1,0 +1,15 @@
+{
+  "type": "module",
+  "name": "alfred-mixcase",
+  "version": "1.0.0",
+  "description": "Converts an alfred workflow query to a mixed case string",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Xavier Spriet <linkadmin@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "alfy": "^1.0.0"
+  }
+}
