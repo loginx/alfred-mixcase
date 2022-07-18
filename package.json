@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "alfred-mixcase",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Converts an alfred workflow query to a mixed case string",
   "main": "index.js",
   "scripts": {
