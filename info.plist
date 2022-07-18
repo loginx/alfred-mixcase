@@ -40,7 +40,7 @@
 	<key>description</key>
 	<string>Alfred workflow designed to convert arbitrary strings into mixed case. Hotkey support to mix MacOS selected text from other applications.</string>
 	<key>disabled</key>
-	<true/>
+	<false/>
 	<key>name</key>
 	<string>mIx cAsE</string>
 	<key>objects</key>
