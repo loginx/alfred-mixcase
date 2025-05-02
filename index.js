@@ -1,30 +1,28 @@
-import alfy from "alfy";
+const alfy = require("alfy");
 
 function altCaseWord(subject) {
   let out = "";
   Array.from(subject).forEach((letter, idx) => {
     out += idx % 2 ? letter.toUpperCase() : letter.toLowerCase();
   });
-
   return out;
 }
 
 function altCaseStr(subject) {
-  let out = [];
-  subject.split(" ").forEach((word) => {
-    out.push(altCaseWord(word));
-  });
-  return out.join(" ");
+  return subject.split(" ").map(altCaseWord).join(" ");
 }
 
-const result = altCaseStr(alfy.input);
+// Only run Alfred-specific code if this file is being run directly
+if (require.main === module) {
+  const result = altCaseStr(alfy.input);
+  const items = [
+    {
+      title: result,
+      subtitle: "copy to clipboard",
+      arg: result
+    }
+  ];
+  alfy.output(items);
+}
 
-const items = [
-  {
-    title: result,
-    subtitle: "copy to clipboard",
-    arg: result
-  }
-];
-
-alfy.output(items);
+module.exports = { altCaseWord, altCaseStr };

@@ -1,15 +1,17 @@
 {
-  "type": "module",
   "name": "alfred-mixcase",
   "version": "1.0.2",
   "description": "Converts an alfred workflow query to a mixed case string",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "Xavier Spriet <linkadmin@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "alfy": "^1.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }
