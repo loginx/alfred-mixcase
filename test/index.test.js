@@ -1,6 +1,5 @@
-jest.mock('alfy');
-
-const { altCaseWord, altCaseStr } = require('../index.js');
+import { describe, test, expect } from 'vitest';
+import { altCaseWord, altCaseStr } from '../index.js';
 
 describe('altCaseWord', () => {
   test('converts single word to alternating case', () => {
@@ -45,5 +44,9 @@ describe('altCaseStr', () => {
   test('preserves punctuation and special characters', () => {
     expect(altCaseStr('hello, world!')).toBe('hElLo, wOrLd!');
     expect(altCaseStr('test@example.com')).toBe('tEsT@ExAmPlE.CoM');
+  });
+
+  test('handles undefined input', () => {
+    expect(() => altCaseStr(undefined)).toThrow();
   });
 }); 

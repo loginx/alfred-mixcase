@@ -1,4 +1,4 @@
-const alfy = require("alfy");
+import alfy from 'alfy';
 
 function altCaseWord(subject) {
   let out = "";
@@ -9,20 +9,31 @@ function altCaseWord(subject) {
 }
 
 function altCaseStr(subject) {
+  if (subject === undefined) {
+    throw new Error('Input is required');
+  }
   return subject.split(" ").map(altCaseWord).join(" ");
 }
 
 // Only run Alfred-specific code if this file is being run directly
-if (require.main === module) {
-  const result = altCaseStr(alfy.input);
-  const items = [
-    {
+if (import.meta.url === `file://${process.argv[1]}`) {
+  try {
+    const result = altCaseStr(alfy.input);
+    alfy.output([{
       title: result,
       subtitle: "copy to clipboard",
       arg: result
-    }
-  ];
-  alfy.output(items);
+    }]);
+  } catch (error) {
+    alfy.output([{
+      title: "No input provided",
+      subtitle: "Please enter some text to convert to mixed case",
+      valid: false,
+      icon: {
+        path: alfy.icon.info
+      }
+    }]);
+  }
 }
 
-module.exports = { altCaseWord, altCaseStr };
+export { altCaseWord, altCaseStr };
