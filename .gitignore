@@ -1,5 +1,7 @@
 node_modules
 
 # Added by cargo
-
 /target
+
+# Build artifacts
+/bin
