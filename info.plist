@@ -123,11 +123,15 @@
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>./node_modules/.bin/run-node index.js "$1"</string>
+				<string>bin="./bin/mixcase"
+if xattr "$bin" 2&gt;/dev/null | grep -q com.apple.quarantine; then
+  xattr -dr com.apple.quarantine "$bin" 2&gt;/dev/null
+fi
+"$bin" "${1}"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
-				<string>test.sh</string>
+				<string></string>
 				<key>subtext</key>
 				<string></string>
 				<key>title</key>
@@ -179,7 +183,7 @@ Mixes every word individually.</string>
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>1.0</string>
+	<string>2.0</string>
 	<key>webaddress</key>
 	<string></string>
 </dict>
