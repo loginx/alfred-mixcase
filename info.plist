@@ -123,7 +123,7 @@
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>bin="./bin/mixcase"
+				<string>bin="./mixcase"
 if xattr "$bin" 2&gt;/dev/null | grep -q com.apple.quarantine; then
   xattr -dr com.apple.quarantine "$bin" 2&gt;/dev/null
 fi
