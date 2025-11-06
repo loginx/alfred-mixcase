@@ -1,0 +1,11 @@
+[package]
+name = "mixcase"
+version = "2.0.0"
+edition = "2021"
+authors = ["Xavier Spriet <linkadmin@gmail.com>"]
+description = "Alfred workflow to convert strings to mixed case"
+license = "MIT"
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
