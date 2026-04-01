@@ -72,7 +72,7 @@ fn get_input(args: &[String]) -> String {
 
     // Fall back to stdin
     let mut buffer = String::new();
-    if let Ok(_) = io::stdin().read_to_string(&mut buffer) {
+    if io::stdin().read_to_string(&mut buffer).is_ok() {
         return buffer.trim().to_string();
     }
 
@@ -81,7 +81,7 @@ fn get_input(args: &[String]) -> String {
 
 fn output_result(result: &str, format: &str) {
     if format == "plain" {
-        println!("{}", result);
+        println!("{result}");
         return;
     }
 
@@ -98,9 +98,9 @@ fn output_result(result: &str, format: &str) {
     output.add_item(item);
 
     match output.to_json() {
-        Ok(json) => println!("{}", json),
+        Ok(json) => println!("{json}"),
         Err(e) => {
-            eprintln!("Error formatting output: {}", e);
+            eprintln!("Error formatting output: {e}");
             std::process::exit(1);
         }
     }
@@ -108,7 +108,7 @@ fn output_result(result: &str, format: &str) {
 
 fn output_error(title: &str, subtitle: &str, format: &str) {
     if format == "plain" {
-        eprintln!("{}: {}", title, subtitle);
+        eprintln!("{title}: {subtitle}");
         std::process::exit(1);
     }
 
@@ -128,9 +128,9 @@ fn output_error(title: &str, subtitle: &str, format: &str) {
     output.add_item(item);
 
     match output.to_json() {
-        Ok(json) => println!("{}", json),
+        Ok(json) => println!("{json}"),
         Err(e) => {
-            eprintln!("Error formatting error output: {}", e);
+            eprintln!("Error formatting error output: {e}");
             std::process::exit(1);
         }
     }
