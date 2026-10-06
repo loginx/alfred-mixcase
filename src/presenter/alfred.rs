@@ -46,9 +46,7 @@ pub struct ScriptFilterOutput {
 impl ScriptFilterOutput {
     /// Creates a new ScriptFilterOutput with empty items.
     pub fn new() -> Self {
-        ScriptFilterOutput {
-            items: Vec::new(),
-        }
+        ScriptFilterOutput { items: Vec::new() }
     }
 
     /// Adds an item to the ScriptFilterOutput.

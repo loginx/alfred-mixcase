@@ -183,7 +183,7 @@ Mixes every word individually.</string>
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>2.0</string>
+	<string>2.0.0</string> <!-- x-release-please-version -->
 	<key>webaddress</key>
 	<string></string>
 </dict>

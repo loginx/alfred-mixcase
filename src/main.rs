@@ -10,9 +10,13 @@ fn main() {
     let args: Vec<String> = std::env::args().collect();
     let format = parse_format_flag(&args);
     let input = get_input(&args);
-    
+
     if input.is_empty() {
-        output_error("No input provided", "Please enter some text to convert to mixed case", &format);
+        output_error(
+            "No input provided",
+            "Please enter some text to convert to mixed case",
+            &format,
+        );
         return;
     }
 
@@ -47,25 +51,25 @@ fn get_input(args: &[String]) -> String {
     // Skip program name and format flags
     let mut input_args = Vec::new();
     let mut skip_next = false;
-    
+
     for (_i, arg) in args.iter().enumerate().skip(1) {
         if skip_next {
             skip_next = false;
             continue;
         }
-        
+
         if arg == "--format" {
             skip_next = true;
             continue;
         }
-        
+
         if arg.starts_with("--format=") {
             continue;
         }
-        
+
         input_args.push(arg.clone());
     }
-    
+
     if !input_args.is_empty() {
         return input_args.join(" ");
     }
