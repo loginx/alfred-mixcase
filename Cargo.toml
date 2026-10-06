@@ -1,6 +1,6 @@
 [package]
 name = "mixcase"
-version = "2.0.0"
+version = "2.0.1"
 edition = "2021"
 authors = ["Xavier Spriet <linkadmin@gmail.com>"]
 description = "Alfred workflow to convert strings to mixed case"
