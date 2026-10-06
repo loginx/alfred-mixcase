@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.0.1](https://github.com/loginx/alfred-mixcase/compare/v2.0.0...v2.0.1) (2026-10-06)
+
+
+### Build System
+
+* **deps:** bump serde from 1.0.228 to 1.0.229 ([#14](https://github.com/loginx/alfred-mixcase/issues/14)) ([826e40f](https://github.com/loginx/alfred-mixcase/commit/826e40f1349c0309bfc8b2ee4a5e76b6cf1cb073))
+* **deps:** bump serde_json from 1.0.149 to 1.0.151 ([#15](https://github.com/loginx/alfred-mixcase/issues/15)) ([97caefa](https://github.com/loginx/alfred-mixcase/commit/97caefa6a9f5606c13d9e31924f8badaa02bf4d0))
+
 ## 2.0.0 (2026-10-06)
 
 
