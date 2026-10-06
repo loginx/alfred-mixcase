@@ -14,19 +14,19 @@ pub fn alt_case_word(subject: &str) -> String {
 }
 
 /// Converts a string to mixed case, processing each word separately
-/// 
+///
 /// # Arguments
-/// 
+///
 /// * `subject` - The input string to convert
-/// 
+///
 /// # Returns
-/// 
+///
 /// Returns the mixed case string, or an error if subject is None
 pub fn alt_case_str(subject: &str) -> Result<String, String> {
     if subject.is_empty() {
         return Ok(String::new());
     }
-    
+
     Ok(subject
         .split(' ')
         .map(alt_case_word)
@@ -86,6 +86,9 @@ mod tests {
     #[test]
     fn test_alt_case_str_preserves_punctuation_and_special_characters() {
         assert_eq!(alt_case_str("hello, world!").unwrap(), "hElLo, wOrLd!");
-        assert_eq!(alt_case_str("test@example.com").unwrap(), "tEsT@ExAmPlE.CoM");
+        assert_eq!(
+            alt_case_str("test@example.com").unwrap(),
+            "tEsT@ExAmPlE.CoM"
+        );
     }
 }
